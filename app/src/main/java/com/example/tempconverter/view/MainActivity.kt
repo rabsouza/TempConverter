@@ -26,7 +26,8 @@ class MainActivity : AppCompatActivity(), TemperatureContract.View {
             TemperatureFahrenheitBusiness()
         )
 
-        btnConvertTemp.setOnClickListener {
+        btnConverterTemp.setOnClickListener {
+            val value = txtTempValue.text.toString().replace(",",".")
             when {
                 txtTempValue.text.isNullOrBlank() -> {
                     txtTempValue.error = "Você deve informar uma temperatura!"
@@ -34,12 +35,14 @@ class MainActivity : AppCompatActivity(), TemperatureContract.View {
                 }
 
                 rbtTempCelcius.isChecked -> {
-                    val temperature = Temperature(txtTempValue.text.toString().toDouble(), Type.CELCIUS)
+                    val temperature =
+                        Temperature(value.toDouble(), Type.CELCIUS)
                     presenter.onConverterTemperatureClick(temperature)
                 }
 
                 else -> {
-                    val temperature = Temperature(txtTempValue.text.toString().toDouble(), Type.FARENHEIT)
+                    val temperature =
+                        Temperature(value.toDouble(), Type.FARENHEIT)
                     presenter.onConverterTemperatureClick(temperature)
                 }
             }

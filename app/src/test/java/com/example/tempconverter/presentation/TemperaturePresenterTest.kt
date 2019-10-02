@@ -9,11 +9,10 @@ import io.mockk.impl.annotations.InjectMockKs
 import io.mockk.impl.annotations.MockK
 import io.mockk.mockk
 import io.mockk.verify
-import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
 
-class TemperaturePresenterTest{
+class TemperaturePresenterTest {
 
     @MockK
     lateinit var business: TemperatureBusiness
@@ -28,7 +27,7 @@ class TemperaturePresenterTest{
     fun setUp() = MockKAnnotations.init(this, relaxUnitFun = true, relaxed = true)
 
     @Test
-    fun `onConverterTemperatureClick - calcula e exibe a temperatura convertida para CELCIUS`(){
+    fun `onConverterTemperatureClick - calcula e exibe a temperatura convertida para CELCIUS`() {
         val temperature = mockk<Temperature>()
         every { temperature.type } returns Type.CELCIUS
 
@@ -39,7 +38,7 @@ class TemperaturePresenterTest{
     }
 
     @Test
-    fun `onConverterTemperatureClick - calcula e exibe a temperatura convertida para FARENHEIT`(){
+    fun `onConverterTemperatureClick - calcula e exibe a temperatura convertida para FARENHEIT`() {
         val temperature = mockk<Temperature>()
         every { temperature.type } returns Type.FARENHEIT
 

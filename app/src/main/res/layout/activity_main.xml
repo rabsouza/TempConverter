@@ -4,18 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.MainActivity"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context=".view.MainActivity">
 
-    <EditText
-        android:id="@+id/txtTempValue"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="numberDecimal"
-        android:imeOptions="actionDone"
-        android:hint="Digite o valor da temperatura"
-        />
+        android:hint="@string/hint_value_temperature"
+        app:errorEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtTempValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="0.0"
+            android:imeOptions="actionDone"
+            android:inputType="numberDecimal" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <RadioGroup
         android:layout_width="match_parent"
@@ -29,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:checked="true"
-            android:text="celcius"/>
+            android:text="@string/txt_option_celcius" />
 
         <RadioButton
             android:id="@+id/rbtTempFarenheit"
@@ -37,14 +44,19 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:checked="false"
-            android:text="farenheit"/>
+            android:text="@string/txt_option_farenheit" />
 
     </RadioGroup>
 
-    <Button
-        android:id="@+id/btnConvertTemp"
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:id="@+id/btnConverterTemp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="CONVERTER TEMPERATURA"/>
+        android:text="@string/btn_converter_temperature"
+        android:textColor="@android:color/white"
+        android:textSize="14sp"
+        app:backgroundTint="@color/colorAccent"
+        app:cornerRadius="16dp"/>
 
 </LinearLayout>

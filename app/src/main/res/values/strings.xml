@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Conversor de temperatura</string>
+    <string name="hint_value_temperature">Digite o valor da temperatura</string>
+    <string name="txt_option_celcius">celcius</string>
+    <string name="txt_option_farenheit">farenheit</string>
+    <string name="btn_converter_temperature">CONVERTER TEMPERATURA</string>
 </resources>

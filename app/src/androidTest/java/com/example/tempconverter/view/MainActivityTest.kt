@@ -13,7 +13,7 @@ import org.junit.runner.RunWith
 
 @LargeTest
 @RunWith(AndroidJUnit4::class)
-class MainActivityTest{
+class MainActivityTest {
 
     private lateinit var context: Context
 
@@ -22,20 +22,20 @@ class MainActivityTest{
     var testRule = ActivityTestRule(MainActivity::class.java, true, false)
 
     @Before
-    fun setup(){
+    fun setup() {
         testRule.launchActivity(Intent())
         context = testRule.activity.applicationContext
     }
 
     @Test
-    fun valida_msg_error_qdo_temperatura_nao_preenchido(){
+    fun valida_msg_error_qdo_temperatura_nao_preenchido() {
         MainRobot()
             .clickConverter()
             .checkTempConverterError()
     }
 
     @Test
-    fun valida_converter_0F_para_17C_negativo(){
+    fun valida_converter_0F_para_17C_negativo() {
         MainRobot()
             .fillTempConverter("0.0")
             .clickFarenheitOption()
@@ -44,7 +44,7 @@ class MainActivityTest{
     }
 
     @Test
-    fun valida_converter_0C_para_32F(){
+    fun valida_converter_0C_para_32F() {
         MainRobot()
             .fillTempConverter("0.0")
             .clickCelciusOption()

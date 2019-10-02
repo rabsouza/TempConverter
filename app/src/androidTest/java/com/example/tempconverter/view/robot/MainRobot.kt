@@ -21,7 +21,7 @@ class MainRobot {
 
     fun checkTempConverterError() = apply {
         onView(withId(R.id.txtTempValue))
-            .check(matches(hasErrorText("Você deve informar uma temperatura!")));
+            .check(matches(hasErrorText("Você deve informar uma temperatura!")))
     }
 
     fun clickCelciusOption() = apply {
@@ -35,7 +35,7 @@ class MainRobot {
     }
 
     fun clickConverter() = apply {
-        onView(withId(R.id.btnConvertTemp))
+        onView(withId(R.id.btnConverterTemp))
             .perform(click())
     }
 
